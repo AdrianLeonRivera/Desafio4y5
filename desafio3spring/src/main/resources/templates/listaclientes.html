@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Desafio 4</title>
+	</head>
+	<body>
+		<h1>Listado de Clientes</h1>
+		<table class="table table-stripped">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Fecha de nacimiento</th>
+                <th>DNI</th>
+                <th>Eliminar</th>
+            </tr>
+
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.id}"></td>
+                <td th:text="${cliente.nombre}"></td>
+                <td th:text="${cliente.apellidos}"></td>
+                <td th:text="${cliente.fecha_nac}"></td>
+                <td th:text="${cliente.dni}"></td>
+                <td><a th:href=@{/clientes/borrarcliente(id=${cliente.id})}>Eliminar</a></td>
+            </tr>
+        </table>
+        <a th:href=@{/index}>Volver</a>
+	</body>
+</html>

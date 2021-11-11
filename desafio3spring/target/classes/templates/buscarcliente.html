@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Desafio 4</title>
+	</head>
+	<body>
+		<h1>Buscar Cliente</h1>
+			<form th:action="@{/clientes/buscarcliente}" th:object="${cliente}" method="post">
+			    <fieldset>
+			        <legend>Datos del cliente</legend>
+			        <table>
+			            <tr>
+			                <td><label for="Nombre">Nombre: </label></td>
+			                <td><input type="text" name="nombre" /></td>
+			            </tr>
+			            <tr>
+			                <td><label for="Apellidos">Apellidos: </label></td>
+			                <td><input type="text" name="apellidos" /></td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <button type="submit">Buscar</button>
+			                </td>
+			            </tr>
+			        </table>
+			    </fieldset>
+			</form>
+	</body>
+</html>
